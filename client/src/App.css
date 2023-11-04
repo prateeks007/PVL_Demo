@@ -1,0 +1,129 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.app-container {
+  /*main page container*/
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+  background: url('~/public/background3.jpg') center center no-repeat; 
+  background-size: cover; 
+  color: white; 
+  position: relative;
+}
+.navbar {
+  /*header*/
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: rgba(0, 0, 0, 1); 
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: white;
+  
+}
+
+.tab-bar {
+  display: flex;
+}
+
+button {
+  margin: 0 10px; 
+}
+
+.app-content {
+  /*main content container*/
+  background-color: rgba(130, 145, 126, 0.6);
+  padding: 20px; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  margin-top: 50px; 
+  color: black;
+  width: 50%;
+
+}
+
+.category {
+  /*each category card*/
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  margin-bottom: 20px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  font-weight: bold;
+
+
+}
+
+.category-name {
+  font-size: 18px; 
+  flex: 1;
+
+}
+
+.category-count {
+  font-size: 24px; 
+  flex: 1;
+  text-align: right;
+}
+
+.chart {
+  width:  250px;
+  height: 250px;
+  margin: 0 auto;
+
+
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px; 
+  border-radius: 25px; 
+  background-color: #ffffff; 
+  color: #000000; 
+  font-size: 18px; 
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none; 
+  transition: background-color 0.3s ease; 
+  font-weight: bold;
+}
+.button:hover {
+  background-color: #1996cf; 
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.settings-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  margin: 10px 0;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
