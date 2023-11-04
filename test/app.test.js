@@ -15,7 +15,7 @@ describe("GET people data", () => {
     // console.log("hmm");
     //get token and save it for other calls
     var sendtoken = "";
-    const mainUrl = "http://localhost:3001/";
+    const mainUrl = "https://pvldemo-production.up.railway.app/";
     axios
       .get(mainUrl + "get-token")
       .then((response) => {
@@ -24,7 +24,7 @@ describe("GET people data", () => {
         // console.log(token, sendtoken);
 
         axios
-          .get("http://localhost:3001/people", {
+          .get("https://pvldemo-production.up.railway.app/people", {
             headers: {
               authorization: sendtoken,
             },
@@ -48,7 +48,7 @@ describe("GET people data", () => {
 describe("Update User data", () => {
   it("should update the database and return a success message", (done) => {
     var sendtoken = "";
-    const mainUrl = "http://localhost:3001/";
+    const mainUrl = "https://pvldemo-production.up.railway.app/";
     const formData = {
       Male: 65,
       Female: 45,
@@ -66,15 +66,19 @@ describe("Update User data", () => {
 
         // formData = JSON.stringify(formData);
         axios
-          .post("http://localhost:3001/users/update", formData, {
-            headers: {
-              authorization: sendtoken,
-              "Content-Type": "application/json",
-            },
-          })
+          .post(
+            "https://pvldemo-production.up.railway.app/users/update",
+            formData,
+            {
+              headers: {
+                authorization: sendtoken,
+                "Content-Type": "application/json",
+              },
+            }
+          )
           .then((response) => {
             axios
-              .get("http://localhost:3001/people", {
+              .get("https://pvldemo-production.up.railway.app/people", {
                 headers: {
                   authorization: sendtoken,
                 },

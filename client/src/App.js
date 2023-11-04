@@ -7,7 +7,7 @@ import axios from "axios";
 const App = () => {
   const [jwtToken, setJwtToken] = useState(null);
 
-  const mainUrl = "http://localhost:3001/";
+  const mainUrl = "https://pvldemo-production.up.railway.app/";
   //get token and save it for other calls
   axios
     .get(mainUrl + "get-token")
@@ -67,7 +67,7 @@ const PeopleTab = ({ peopleData, jwtToken }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/people", {
+      .get("https://pvldemo-production.up.railway.app/people", {
         headers: {
           authorization: jwtToken,
         },
@@ -116,7 +116,7 @@ const SettingsTab = ({ jwtToken }) => {
   // console.log(jwtToken);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/people", {
+      .get("https://pvldemo-production.up.railway.app/people", {
         headers: {
           authorization: jwtToken,
         },
@@ -142,12 +142,16 @@ const SettingsTab = ({ jwtToken }) => {
   const updateDatabase = () => {
     // console.log(jwtToken);
     axios
-      .post("http://localhost:3001/users/update", formData, {
-        headers: {
-          authorization: jwtToken,
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "https://pvldemo-production.up.railway.app/users/update",
+        formData,
+        {
+          headers: {
+            authorization: jwtToken,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         alert(response.data.message);
       })
